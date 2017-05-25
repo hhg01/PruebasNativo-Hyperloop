@@ -1,0 +1,86 @@
+﻿--creamos la tabla de Usuarios
+CREATE TABLE Usuario
+(id_usuario SERIAL NOT NULL,
+ nombre_usuario character varying(20) NOT NULL,
+ apellido character varying(20) NOT NULL,
+ usuario character varying(20) NOT NULL,
+ contraseña character varying(20) NOT NULL,
+ CONSTRAINT pk_id_usuario PRIMARY KEY (id_usuario),
+ CONSTRAINT u_id_usuario UNIQUE (id_usuario),
+ CONSTRAINT chk_id_usuario CHECK (id_usuario > 0 )
+ );
+
+--creamos la tabla Artistas
+CREATE TABLE Artistas
+(id_artista SERIAL NOT NULL,
+nombre_artista character varying(20) NOT NULL,
+CONSTRAINT pk_id_artista PRIMARY KEY (id_artista),
+CONSTRAINT u_id_artista UNIQUE (id_artista),
+CONSTRAINT chk_id_artista CHECK (id_artista > 0)
+);
+
+--creamos la tabla Album
+CREATE TABLE Album
+(id_album SERIAL NOT NULL,
+nombre_tabla character varying(20) NOT NULL,
+año integer NOT NULL,
+imagen character varying(50) NOT NULL,
+fk_artista integer NOT NULL,
+CONSTRAINT pk_id_album PRIMARY KEY(id_album),
+CONSTRAINT u_id_album UNIQUE (id_album),
+CONSTRAINT ck_id_album CHECK (id_album > 0),
+CONSTRAINT fk_fk_artista FOREIGN KEY (fk_artista) REFERENCES Artistas (id_artista)
+);
+
+--creamos la tabla Canciones
+CREATE TABLE Canciones
+(id_cancion SERIAL NOT NULL,
+nombre_concion character varying(20) NOT NULL,
+src character varying(50) NOT NULL,
+duracion character varying(5) NOT NULL,
+formato character varying(5) NOT NULL,
+reproducciones integer NOT NULL,
+genero character varying(15) NOT NULL,
+CONSTRAINT pk_id_cancion PRIMARY KEY(id_cancion),
+CONSTRAINT u_id_cancion UNIQUE (id_cancion),
+CONSTRAINT chk_id_cancion CHECK (id_cancion > 0)
+);
+
+--creamos la tabla intermedia entre Album y Canciones
+CREATE TABLE Album_Cancion
+(id_albumcancion SERIAL NOT NULL,
+fk_album integer NOT NULL,
+fk_cancion integer NOT NULL,
+CONSTRAINT pk_id_albumcancion PRIMARY KEY(id_albumcancion),
+CONSTRAINT u_id_albumcancion UNIQUE (id_albumcancion),
+CONSTRAINT chk_id_albumcancion CHECK (id_albumcancion > 0),
+CONSTRAINT fk_fk_album FOREIGN KEY (fk_album) REFERENCES Album (id_album),
+CONSTRAINT fk_fk_cancion FOREIGN KEY (fk_cancion) REFERENCES Canciones (id_cancion)
+);
+
+
+
+--creamos la tabla PlayList
+CREATE TABLE PlayList
+(id_play SERIAL NOT NULL,
+nombre_playlist character varying(20) NOT NULL,
+fk_usuario integer NOT NULL,
+CONSTRAINT pk_id_play PRIMARY KEY (id_play),
+CONSTRAINT u_id_play UNIQUE (id_play),
+CONSTRAINT chk_id_play CHECK (id_play > 0),
+CONSTRAINT fk_fk_usuario FOREIGN KEY (fk_usuario) REFERENCES Usuarios (id_usuario)
+);
+
+--creacion de la tabla intermedia entre PlayList y Album, Canciones
+CREATE TABLE ListaCanciones
+(id_lista SERIAL NOT NULL,
+fk_play integer NOT NULL,
+fk_album integer NOT NULL,
+fk_cancion integer NOT NULL,
+CONSTRAINT pk_id_lista PRIMARY KEY (id_lista),
+CONSTRAINT u_id_lista UNIQUE (id_lista),
+CONSTRAINT chk_id_lista CHECK (id_lista > 0),
+CONSTRAINT fk_fk_play FOREIGN KEY (fk_play) REFERENCES PlayList (id_play),
+CONSTRAINT fk_fk_album FOREIGN KEY (fk_album) REFERENCES Album (id_album),
+CONSTRAINT fk_fk_cancion FOREIGN KEY (fk_cancion) REFERENCES Canciones (id_cancion)
+);
