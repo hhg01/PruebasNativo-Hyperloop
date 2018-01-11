@@ -1,0 +1,7 @@
+<Alloy>
+	<Window id="winTouches" title="Touches">
+		<ScrollView>
+			<View id="touch_container"/>
+		</ScrollView>
+	</Window>
+</Alloy>

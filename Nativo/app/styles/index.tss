@@ -1,0 +1,57 @@
+".container": {
+	backgroundColor:"white",
+	layout:"vertical"
+}
+//Tab Vista
+"#view1":{
+	width: Titanium.UI.FILL,
+	height: "70%"
+}
+"#view1_up":{
+	width: Titanium.UI.FILL,
+	height: "50%",
+	layout: "horizontal"
+}
+"#boton_nativo":{
+	width: "50%",
+	height: Titanium.UI.FILL
+}
+"#view1_down":{
+	width: Titanium.UI.FILL,
+	height: "50%"
+}
+"#view2":{
+	width: Titanium.UI.FILL,
+	height: "30%",
+	layout:"horizontal"
+}
+"#load":{
+	width: "50%",
+	height: Titanium.UI.FILL
+}
+
+
+//Tab Ejemplos
+"View":{
+	backgroundColor:"white",
+	width:Titanium.UI.FILL,
+	height:"40%",
+	layout:"horizontal"
+}
+"#color2":{
+	backgroundColor:"#795548",
+	width:Titanium.UI.FILL,
+	height:"20%"
+}
+"#color3":{
+	backgroundColor:"#795548",
+	width:Titanium.UI.FILL,
+	height:"20%"
+}
+"#color4":{
+	backgroundColor:"#795548",
+	width:Titanium.UI.FILL,
+	height:"20%"
+}
+
+

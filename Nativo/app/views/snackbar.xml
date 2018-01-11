@@ -1,0 +1,9 @@
+<Alloy>
+	<Window id="winSnack" title="Snackbar Controller">
+		<ScrollView>
+			<View id="alert_container"/>
+			<Button id="button">Show Snackbar</Button>
+			<Label id="notice"/>
+		</ScrollView>
+	</Window>
+</Alloy>

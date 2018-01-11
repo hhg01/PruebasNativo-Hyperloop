@@ -1,0 +1,9 @@
+<Alloy>
+	<Window id="windowAnimate" title="Animacion">
+		<ScrollView>
+			<View id="animateview_container"/>
+			<Button id="button">Animate</Button>
+			<Label id="notice"/>
+		</ScrollView>
+	</Window>
+</Alloy>

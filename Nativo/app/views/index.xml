@@ -1,0 +1,57 @@
+<Alloy>
+	<TabGroup backgroundColor="white" title="Nativo">
+		<Tab title="Vista">
+			<Window class="container">
+				<View id="view1">
+					<ScrollableView id="scrollableView" showPagingControl="true">
+			            <View>
+			               	<View id="view1_up">
+			               		<View id="boton_nativo">
+			               			
+			               		</View>
+			               		<View>
+			               			
+			               		</View>
+			               	</View>
+			               <View id="view1_down" backgroundColor="blue">
+			               		<Button id="newVentana">Click Me</Button>
+			               </View>
+			            </View>
+			            <View backgroundColor="#246">
+			             	
+			            </View>
+			        </ScrollableView>
+				</View>
+				<View id="view2">
+					<View id="load" backgroundColor="green"></View>
+					<View>
+						<Button id="button">Mira</Button>
+						<Label id="notice"/>
+					</View>
+				</View>
+			</Window>
+		</Tab>
+		<Tab title="Ejemplos">
+			<Window class="container" id="win">
+				<View id="alert_container">
+					<Button onClick="openWindowBlur" title="BLUR"/>
+					<Button id="ejemploAlert" title="Alert"/>
+					<Button onClick="openWindowAnimate" title="animacion"/>
+					<Button onClick="openWindowDonut" title="Donut Chart"/>
+					<Button onClick="openWindowDraw" title="Draw"/>
+					<Button onClick="openWindowProgress" title="Progreso"/>
+					<Button onClick="openWindowLabel" title="Label"/>
+					<Button onClick="openWindowSnack" title="Snack"/>
+					<Button onClick="openWindowTouches" title="touches"/>
+				</View>
+				<View id="color2">			
+				</View>
+				<View id="color3">			
+				</View>
+				<View id="color4">	
+				</View>
+			</Window>
+		</Tab>
+	</TabGroup>
+</Alloy>
+

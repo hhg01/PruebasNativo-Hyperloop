@@ -1,0 +1,7 @@
+<Alloy>
+	<Window id="winDraw" title="Custom Drawing">
+		<ScrollView>
+			<View id="rect_container"/>
+		</ScrollView>
+	</Window>
+</Alloy>
